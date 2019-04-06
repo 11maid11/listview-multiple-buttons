@@ -35,9 +35,14 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                parent.removeView(view);
                 data.remove(position);
+//                Toast.makeText(MainActivity.this, position+"", Toast.LENGTH_SHORT).show();
                 lvAdapter.notifyDataSetChanged();
-                Toast.makeText(MainActivity.this,"Clicked " + data.get(position),Toast.LENGTH_SHORT).show();
-            }
+                try {
+                    Toast.makeText(MainActivity.this, "Clicked " + data.get(position), Toast.LENGTH_SHORT).show();
+                }catch (Exception e){
+
+                }
+                }
         });
     }
 }
